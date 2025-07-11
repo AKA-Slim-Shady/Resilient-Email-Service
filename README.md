@@ -21,7 +21,8 @@ EmailService/
 ├── views/
 │   └── emailPage.html
 ├── .gitignore
-├── index.js (or app.js)
+├── main.js
+├── app.test.js
 └── README.md
 ```
 
@@ -45,7 +46,7 @@ npm install
 ### 3. Start the Server
 
 ```bash
-node index.js
+node main.js
 ```
 
 The app will be available at `http://localhost:3000`.
@@ -61,6 +62,32 @@ http://localhost:3000/sendEmail
 ```
 
 Use the provided form to send an email. Duplicate requests with the same content are skipped using idempotency checks.
+
+---
+
+## 🧪 Running Tests
+
+This project includes unit tests using **Jest**.
+
+### Add to `package.json`:
+
+```json
+"scripts": {
+  "test": "jest"
+}
+```
+
+### Run tests:
+
+```bash
+npm test
+```
+
+Make sure you have Jest installed globally or as a dev dependency:
+
+```bash
+npm install --save-dev jest
+```
 
 ---
 
