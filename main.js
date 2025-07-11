@@ -247,10 +247,9 @@ app.route("/sendEmail").post(async function (req, res) {
     res.sendFile(__dirname + "/views/emailPage.html");
 });
 
-if (require.main === module) {
-  app.listen(3000, () => {
-    console.log("APP LISTENING ON PORT 3000");
-  });
-}
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`APP LISTENING ON PORT ${PORT}`);
+});
 
 module.exports = { app, MockEmailService, ipMap, idempotencyMap };
