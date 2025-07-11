@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send Email</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    input, textarea, button {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .valid-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+    .fail-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Compose Email</h1>
+  <form id="emailForm" method="POST" action="/sendEmail">
+    <label for="from">From:</label>
+    <input type="email" name="from" id="from" required>
+
+    <label for="to">To:</label>
+    <input type="email" name="to" id="to" required>
+
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" id="subject" required>
+
+    <label for="text">Message:</label>
+    <textarea name="text" id="text" required></textarea>
+
+    <div class="buttons">
+      <button type="submit" class="valid-btn">VALID SUBMIT</button>
+    </div>
+  </form>
+
+</body>
+</html>
